@@ -342,19 +342,19 @@ export default function Wishlists() {
 									{
 										name: "Bali Paradise",
 										country: "Indonesia",
-										image: "/romance-1.jpg",
+										image: "/images/romance-1.jpg",
 										price: "$1,199",
 									},
 									{
 										name: "Iceland Adventure",
 										country: "Iceland",
-										image: "/greek-island.jpg",
+										image: "/images/greek-island.jpg",
 										price: "$2,299",
 									},
 									{
 										name: "Dubai Luxury",
 										country: "UAE",
-										image: "/maldives-luxury.jpg",
+										image: "/images/maldives-luxury.jpg",
 										price: "$1,699",
 									},
 								].map((item, index) => (
