@@ -8,22 +8,22 @@ const popularDestinations = [
 	{
 		name: "Santorini",
 		href: "/destinations",
-		image: "/placeholder.svg?height=150&width=200",
+		image: "/images/african.jpg",
 	},
 	{
 		name: "Kyoto",
 		href: "/destinations",
-		image: "/placeholder.svg?height=150&width=200",
+		image: "/images/mountains.jpg",
 	},
 	{
 		name: "Machu Picchu",
 		href: "/destinations",
-		image: "/placeholder.svg?height=150&width=200",
+		image: "/images/machu-picchu.jpg",
 	},
 	{
 		name: "Maldives",
 		href: "/destinations",
-		image: "/placeholder.svg?height=150&width=200",
+		image: "/images/maldives-luxury.jpg",
 	},
 ];
 
