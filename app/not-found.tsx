@@ -104,7 +104,7 @@ export default function NotFound() {
 							>
 								<div className="relative h-40 overflow-hidden">
 									<Image
-										src="/feature-2.jpg"
+										src={destination.image}
 										alt={destination.name}
 										fill
 										className="object-cover group-hover:scale-110 transition-transform duration-300"
