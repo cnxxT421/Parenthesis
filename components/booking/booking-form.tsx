@@ -1074,19 +1074,19 @@ export default function BookingForm() {
 							<Checkbox id="terms" />
 							<Label
 								htmlFor="terms"
-								className="text-sm leading-relaxed"
+								className="text-sm leading-relaxed inline-block"
 							>
 								I agree to the
 								<a
 									href="#"
-									className="text-blue-600 hover:underline"
+									className="text-blue-600 hover:underline mx-1"
 								>
 									Terms and Conditions
 								</a>
 								and
 								<a
 									href="#"
-									className="text-blue-600 hover:underline"
+									className="text-blue-600 hover:underline mx-1"
 								>
 									Privacy Policy
 								</a>
@@ -1166,85 +1166,83 @@ export default function BookingForm() {
 
 	return (
 		<div className="min-h-screen pt-20 bg-[#CDC8BC]">
-			<section className="bg-secondary py-12 text-amber-50">
-				<div className="max-w-7xl mx-auto">
-					<h1 className="text-6xl font-surfer md:text-4xl font-bold mb-4">
-						Book Your Dream Trip
-					</h1>
-					<p className="text-amber-50/80 mb-6">
-						Complete your booking in just a few simple steps
-					</p>
+			<section className="first-section flex flex-col justify-center items-center text-amber-50 rounded-br-[100px] py-10 bg-secondary">
+				<h1 className="text-4xl md:text-[6vw] font-bold font-surfer animate-fade-up">
+					Book Your Dream Trip
+				</h1>
+				<p className="text-sm px-6 w-full md:text-[1.5vw] mt-4 text-center animate-fade-up">
+					Complete your booking in just a few simple steps
+				</p>
 
-					<div className="mb-8">
-						<div className="flex items-center justify-between">
-							{steps.map((step, index) => {
-								const Icon = step.icon;
-								const isActive = currentStep === step.number;
-								const isCompleted = currentStep > step.number;
+				<div className="my-8 max-w-7xl mx-auto px-4">
+					<div className="flex items-center justify-between flex-wrap gap-4">
+						{steps.map((step, index) => {
+							const Icon = step.icon;
+							const isActive = currentStep === step.number;
+							const isCompleted = currentStep > step.number;
 
-								return (
+							return (
+								<div
+									key={step.number}
+									className="flex items-center"
+								>
 									<div
-										key={step.number}
-										className="flex items-center"
+										className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-colors ${
+											isCompleted
+												? "bg-green-600 border-green-700"
+												: isActive
+												? "border-yellow-500 text-primary"
+												: "border-muted-foreground text-muted-foreground"
+										}`}
 									>
-										<div
-											className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-colors ${
-												isCompleted
-													? "bg-green-600 border-green-700"
-													: isActive
-													? "border-yellow-500 text-primary"
-													: "border-muted-foreground text-muted-foreground"
-											}`}
-										>
-											{isCompleted ? (
-												<Icon className="w-5 h-5" />
-											) : (
-												<Icon
-													className={`${
-														isActive
-															? "text-yellow-500"
-															: ""
-													}`}
-												/>
-											)}
-										</div>
-										<div className="ml-3">
-											<p
-												className={`text-xl font-bruno font-semibold ${
+										{isCompleted ? (
+											<Icon className="w-5 h-5" />
+										) : (
+											<Icon
+												className={`${
 													isActive
 														? "text-yellow-500"
-														: isCompleted
-														? "text-green-500"
-														: "text-muted-foreground"
-												}`}
-											>
-												Step {step.number}
-											</p>
-											<p
-												className={`text-sm ${
-													isActive
-														? "text-yellow-500/75"
-														: isCompleted
-														? "text-green-500/50"
-														: "text-muted-foreground"
-												}`}
-											>
-												{step.title}
-											</p>
-										</div>
-										{index < steps.length - 1 && (
-											<div
-												className={`flex-1 h-0.5 mx-4 ${
-													isCompleted
-														? "bg-primary"
-														: "bg-muted"
+														: ""
 												}`}
 											/>
 										)}
 									</div>
-								);
-							})}
-						</div>
+									<div className="ml-3">
+										<p
+											className={`text-xl font-bruno font-semibold ${
+												isActive
+													? "text-yellow-500"
+													: isCompleted
+													? "text-green-500"
+													: "text-muted-foreground"
+											}`}
+										>
+											Step {step.number}
+										</p>
+										<p
+											className={`text-sm ${
+												isActive
+													? "text-yellow-500/75"
+													: isCompleted
+													? "text-green-500/50"
+													: "text-muted-foreground"
+											}`}
+										>
+											{step.title}
+										</p>
+									</div>
+									{index < steps.length - 1 && (
+										<div
+											className={`flex-1 h-0.5 mx-4 ${
+												isCompleted
+													? "bg-primary"
+													: "bg-muted"
+											}`}
+										/>
+									)}
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</section>
